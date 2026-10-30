@@ -3,7 +3,16 @@ name = "pycoder"
 version = "0.1.0"
 description = "A decoder-only Python language model trained from scratch"
 requires-python = ">=3.12,<3.13"
-dependencies = ["torch>=2.4", "tokenizers>=0.20", "numpy>=1.26", "PyYAML>=6", "tqdm>=4.66", "tensorboard>=2.17"]
+dependencies = [
+    "torch>=2.4",
+    "tokenizers>=0.20",
+    "numpy>=1.26",
+    "PyYAML>=6",
+    "tqdm>=4.66",
+    "tensorboard>=2.17",
+    "pyarrow>=17",
+    "huggingface-hub>=0.25",
+]
 
 [dependency-groups]
 dev = ["pytest>=8", "ruff>=0.8"]

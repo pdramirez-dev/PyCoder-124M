@@ -1,0 +1,17 @@
+# PyCoder-124M pretraining: ~100M tokens. Use with --model configs/model_124m.yaml.
+# Tokens per step = batch_size * gradient_accumulation * context_length = 4 * 16 * 1024 = 65,536.
+# 1,526 steps * 65,536 = 100.0M tokens. Measured ~2,370 tokens/s (float32, MPS, M5 Air):
+# ~28 s per step, ~12 h in total before thermal throttling. batch_size 4 uses ~12 GiB.
+seed: 42
+batch_size: 4
+gradient_accumulation: 16
+learning_rate: 0.0006
+min_learning_rate: 0.00006
+warmup_steps: 75
+max_steps: 1526
+weight_decay: 0.1
+grad_clip: 1.0
+eval_interval: 100
+eval_batches: 20
+checkpoint_interval: 50
+precision: float32
