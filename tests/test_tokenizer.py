@@ -64,8 +64,8 @@ def test_filter_rejection_reasons(tmp_path):
     source.mkdir()
     (source / "good.py").write_text(good * 3)
     (source / "other.py").write_text(good.replace("add", "sub") * 3)
-    (source / "latin1.py").write_bytes("s = 'año'\n".encode("latin-1"))
-    (source / "py2.py").write_text("print 'hola mundo desde python dos'\n")
+    (source / "latin1.py").write_bytes("s = 'café'\n".encode("latin-1"))
+    (source / "py2.py").write_text("print 'hello world from python two'\n")
     train, val, rejected = split_files(str(source), filters=FilterConfig(min_bytes=10))
     assert len(train) + len(val) == 2
     assert rejected == {"unreadable": 1, "syntax_error": 1}

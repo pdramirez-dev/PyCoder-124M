@@ -1,60 +1,60 @@
-# Proyecto: PyCoder-124M — Python Language Model from Scratch
+# Project: PyCoder-124M — Python Language Model from Scratch
 
-Actúa como un Senior AI/ML Engineer especializado en PyTorch, arquitectura Transformer, entrenamiento de LLM desde cero y optimización para Apple Silicon.
+Act as a senior AI/ML engineer specializing in PyTorch, Transformer architecture, LLM training from scratch, and Apple Silicon optimization.
 
-Quiero construir **PyCoder-124M**, un modelo de lenguaje autoregresivo especializado en generación y autocompletado de código Python, entrenado completamente desde cero.
+Build **PyCoder-124M**, an autoregressive language model specialized in Python code generation and autocompletion, trained entirely from scratch.
 
-## 1. Objetivo
+## 1. Objective
 
-Crear un proyecto profesional, modular y extensible que permita:
+Create a professional, modular, extensible project that can:
 
-- Implementar una arquitectura GPT decoder-only desde cero utilizando PyTorch.
-- Inicializar todos los pesos aleatoriamente, sin modelos preentrenados.
-- Entrenar un tokenizer BPE especializado en Python.
-- Preentrenar el modelo mediante predicción del siguiente token.
-- Generar y autocompletar código Python.
-- Guardar checkpoints y reanudar entrenamientos interrumpidos.
-- Ejecutar evaluaciones y benchmarks.
-- Escalar posteriormente el modelo.
+- Implement a decoder-only GPT architecture from scratch using PyTorch.
+- Initialize all weights randomly, without pretrained models.
+- Train a BPE tokenizer specialized in Python.
+- Pretrain the model using next-token prediction.
+- Generate and autocomplete Python code.
+- Save checkpoints and resume interrupted training.
+- Run evaluations and benchmarks.
+- Scale the model later.
 
 ## 2. Hardware
 
-Equipo inicial:
+Initial hardware:
 
 - Apple MacBook Air M5.
-- 32 GB de memoria unificada.
-- macOS con Apple Silicon.
+- 32 GB of unified memory.
+- macOS with Apple Silicon.
 - Backend PyTorch MPS (Metal Performance Shaders).
 
-El proyecto debe ser compatible también con CUDA para entrenar posteriormente en GPUs NVIDIA.
+The project must also support CUDA for later training on NVIDIA GPUs.
 
-## 3. Arquitectura del modelo
+## 3. Model Architecture
 
-Nombre: `PyCoder-124M`
+Name: `PyCoder-124M`
 
-Arquitectura: GPT decoder-only Transformer.
+Architecture: decoder-only GPT Transformer.
 
-Configuración inicial propuesta:
+Proposed initial configuration:
 
 - 12 Transformer blocks.
 - Hidden dimension: 768.
 - 12 attention heads.
 - Context length: 1024 tokens.
-- Tokenizer BPE con vocabulario configurable.
+- BPE tokenizer with configurable vocabulary.
 - Causal self-attention.
 - Rotary Position Embeddings (RoPE).
 - RMSNorm.
 - SwiGLU.
-- Weight tying entre embeddings de entrada y salida.
-- Inicialización de pesos desde cero.
+- Weight tying between input and output embeddings.
+- Weight initialization from scratch.
 
-Ajustar las dimensiones internas y el vocabulario para alcanzar aproximadamente 124 millones de parámetros.
+Adjust internal dimensions and vocabulary to reach approximately 124 million parameters.
 
-Implementar el cálculo automático de parámetros y documentar el valor exacto obtenido.
+Implement automatic parameter counting and document the exact result.
 
-Utilizar `torch.nn.functional.scaled_dot_product_attention` cuando sea compatible, con un fallback funcional.
+Use `torch.nn.functional.scaled_dot_product_attention` where supported, with a functional fallback.
 
-## 4. Stack tecnológico
+## 4. Technology Stack
 
 - Python 3.12.
 - PyTorch.
@@ -65,11 +65,11 @@ Utilizar `torch.nn.functional.scaled_dot_product_attention` cuando sea compatibl
 - TensorBoard.
 - pytest.
 - Ruff.
-- uv para gestión de dependencias.
+- uv for dependency management.
 
-No utilizar `AutoModelForCausalLM` ni cargar modelos preentrenados.
+Do not use `AutoModelForCausalLM` or load pretrained models.
 
-## 5. Estructura del proyecto
+## 5. Project Structure
 
 ```text
 pycoder/
@@ -114,85 +114,85 @@ pycoder/
 └── logs/
 ```
 
-## 6. Entrenamiento
+## 6. Training
 
-Implementar un training loop con:
+Implement a training loop with:
 
 - AdamW optimizer.
-- Learning rate warmup y cosine decay.
+- Learning rate warmup and cosine decay.
 - Gradient accumulation.
 - Gradient clipping.
-- Evaluación periódica de validation loss.
-- Mixed precision cuando el backend lo soporte de forma estable.
-- Checkpointing periódico.
-- Reanudación completa del entrenamiento, incluyendo optimizador, scheduler, RNG y posición del dataset.
+- Periodic validation loss evaluation.
+- Mixed precision when the backend supports it reliably.
+- Periodic checkpointing.
+- Full training resumption, including optimizer, scheduler, RNG, and dataset position.
 - TensorBoard logging.
-- Selección automática entre MPS, CUDA y CPU.
+- Automatic selection between MPS, CUDA, and CPU.
 
-El entrenamiento debe poder detenerse mediante Ctrl+C y guardar un checkpoint de recuperación.
+Training must be stoppable with Ctrl+C and save a recovery checkpoint.
 
 ## 7. Dataset
 
-En esta primera etapa, NO descargar datasets masivos.
+In this first stage, do NOT download massive datasets.
 
-Crear un pequeño dataset de demostración con funciones Python originales y ejemplos de código válidos para probar el pipeline.
+Create a small demo dataset with original Python functions and valid code examples to test the pipeline.
 
-El sistema debe permitir posteriormente integrar datasets como The Stack v2, filtrando únicamente código Python y respetando las licencias.
+The system must later support datasets such as The Stack v2, filtering for Python code and respecting licenses.
 
-Separar entrenamiento y validación, evitando duplicados y contaminación entre conjuntos.
+Split training and validation, avoiding duplicates and contamination between sets.
 
-## 8. Validaciones
+## 8. Validation
 
-Implementar pruebas automatizadas que comprueben:
+Implement automated tests covering:
 
-- Dimensiones de los tensores.
-- Correcto funcionamiento de la máscara causal.
+- Tensor dimensions.
+- Correct causal mask behavior.
 - Forward pass.
 - Backpropagation.
-- Reducción de loss en un dataset pequeño.
-- Generación autoregresiva.
-- Guardado y restauración de checkpoints.
-- Funcionamiento en MPS, cuando esté disponible.
+- Loss reduction on a small dataset.
+- Autoregressive generation.
+- Checkpoint saving and restoration.
+- MPS operation, when available.
 
-## 9. Optimización para MacBook Air M5
+## 9. MacBook Air M5 Optimization
 
-El MacBook Air no tiene ventilador, por lo que el sistema debe permitir entrenamientos controlados y reanudables.
+The MacBook Air has no fan, so the system must support controlled, resumable training.
 
-Incluir:
+Include:
 
-- Configuración de batch size y gradient accumulation.
-- Limitación configurable de pasos.
-- Monitorización de memoria cuando sea posible.
-- Un modelo diminuto para pruebas rápidas.
-- Configuración de producción separada para 124M.
+- Configurable batch size and gradient accumulation.
+- Configurable step limits.
+- Memory monitoring where possible.
+- A tiny model for quick tests.
+- A separate production configuration for 124M.
 
-No iniciar entrenamientos prolongados automáticamente.
+Do not start long training runs automatically.
 
-## 10. Primera entrega
+## 10. First Delivery
 
-En esta fase quiero exclusivamente:
+In this phase, only:
 
-1. Crear el scaffolding completo.
-2. Implementar la arquitectura funcional.
-3. Implementar un tokenizer y pipeline de datos mínimo.
-4. Configurar el entrenamiento y checkpoints.
-5. Crear los tests.
-6. Documentar instalación y comandos.
-7. Ejecutar un smoke test breve, si el entorno lo permite.
+1. Create the complete scaffolding.
+2. Implement the functional architecture.
+3. Implement a tokenizer and minimal data pipeline.
+4. Configure training and checkpoints.
+5. Create the tests.
+6. Document installation and commands.
+7. Run a brief smoke test if the environment allows.
 
-No realizar aún el pretraining de 100 millones de tokens.
+Do not yet run 100-million-token pretraining.
 
-Priorizar código limpio, tipado, modular, documentado y mantenible.
+Prioritize clean, typed, modular, documented, maintainable code.
 
-No crear implementaciones ficticias, funciones vacías ni placeholders que aparenten estar terminados.
+Do not create fake implementations, empty functions, or placeholders that appear complete.
 
-Al finalizar, mostrar:
+On completion, show:
 
-- Estructura de archivos generada.
-- Número exacto de parámetros.
-- Resultado de los tests.
-- Resultado del smoke test.
-- Consumo de memoria observado, si puede medirse.
-- Comandos para ejecutar el proyecto.
+- Generated file structure.
+- Exact parameter count.
+- Test results.
+- Smoke test result.
+- Observed memory use, if measurable.
+- Commands to run the project.
 
-**Comienza implementando el proyecto, no solamente describiendo cómo hacerlo.**
+**Start implementing the project, rather than only describing how to do it.**

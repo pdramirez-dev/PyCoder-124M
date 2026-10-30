@@ -1,18 +1,18 @@
 # PyCoder-124M
 
-Modelo autoregresivo de código Python inicializado desde cero. La implementación usa un Transformer decoder-only con RoPE, RMSNorm, SwiGLU y embeddings compartidos, sin pesos preentrenados. La configuración de producción tiene **123 587 328 parámetros**: 12 bloques, dimensión 768, 12 cabezas, FFN 2048, vocabulario 50 304 y contexto 1024. `configs/model_tiny.yaml` es para pruebas, no para medir la calidad del modelo final.
+An autoregressive Python code model initialized from scratch. The implementation uses a decoder-only Transformer with RoPE, RMSNorm, SwiGLU, and tied embeddings, without pretrained weights. The production configuration has **123,587,328 parameters**: 12 blocks, dimension 768, 12 heads, FFN 2048, vocabulary 50,304, and context 1024. `configs/model_tiny.yaml` is for testing, not measuring final model quality.
 
-## Requisitos e instalación
+## Requirements and Installation
 
-Python 3.12, [uv](https://docs.astral.sh/uv/) y macOS, Linux o Windows con una versión de PyTorch compatible. En Apple Silicon se selecciona MPS si está disponible; CUDA tiene prioridad y CPU es la alternativa. Instalar las dependencias y herramientas de desarrollo:
+Python 3.12, [uv](https://docs.astral.sh/uv/), and macOS, Linux, or Windows with a compatible PyTorch version are required. CUDA takes priority, MPS is selected on Apple Silicon when available, and CPU is the fallback. Install dependencies and development tools:
 
 ```sh
 uv sync
 ```
 
-## Demostración rápida
+## Quick Demo
 
-El conjunto de `data/demo` contiene ejemplos originales pequeños; no produce un modelo útil. Los comandos siguientes entrenan el tokenizer exclusivamente sobre los archivos de entrenamiento, separan validación antes de tokenizar y ejecutan solo tres pasos:
+`data/demo` contains small original examples; it does not produce a useful model. The following commands train the tokenizer only on training files, split validation before tokenization, and run just three steps:
 
 ```sh
 uv run python scripts/train_tokenizer.py --vocab-size 512
@@ -24,22 +24,24 @@ uv run pytest -q
 uv run ruff check src scripts tests
 ```
 
-Para un entrenamiento configurable, editar `configs/train.yaml` y ejecutar:
+For configurable training, edit `configs/train.yaml` and run:
 
 ```sh
 uv run python scripts/train.py --model configs/model_tiny.yaml --config configs/train.yaml
 uv run tensorboard --logdir logs
 ```
 
-Para 124M, preparar antes un corpus suficiente (ver "Corpus real") y un tokenizer con `--vocab-size 50304`. `configs/train_124m.yaml` entrena unos 100M tokens: 1 526 pasos de 65 536 tokens (batch 4 × acumulación 16 × contexto 1024), aproximadamente 12 h en un MacBook Air M5 en float32 antes de la limitación térmica. Cada checkpoint ocupa unos 1,5 GB.
+For 124M, first prepare a sufficient corpus (see "Real Corpus") and a tokenizer with `--vocab-size 50304`. `configs/train_124m.yaml` trains on about 100M tokens: 1,526 steps of 65,536 tokens (batch 4 × accumulation 16 × context 1024), approximately 12 hours on a MacBook Air M5 in float32 before thermal throttling. Each checkpoint occupies about 1.5 GB.
 
 ```sh
 uv run python scripts/train.py --model configs/model_124m.yaml --config configs/train_124m.yaml
-``` Los parámetros de entrenamiento, tamaño de batch y acumulación son configurables. El corpus de demostración no alcanza para el contexto de producción. No se inicia automáticamente ningún entrenamiento prolongado.
+```
 
-## Corpus real
+Training parameters, batch size, and accumulation are configurable. The demo corpus is insufficient for the production context. Long training runs are not started automatically.
 
-`docs/datasets.md` lista los datasets de Hugging Face evaluados. Para descargar una muestra de `Avelina/python-edu-cleaned` (por defecto 400 MB de texto, unos 100M tokens) en `data/raw/`, con su procedencia (revisión y shards) en `data/raw/python-edu.json`:
+## Real Corpus
+
+`docs/datasets.md` lists the Hugging Face datasets evaluated. To download a sample of `Avelina/python-edu-cleaned` (by default 400 MB of text, about 100M tokens) into `data/raw/`, with provenance (revision and shards) in `data/raw/python-edu.json`:
 
 ```sh
 uv run python scripts/download_dataset.py --max-mb 400
@@ -47,24 +49,24 @@ uv run python scripts/train_tokenizer.py --source data/raw --vocab-size 50304 --
 uv run python scripts/prepare_dataset.py --source data/raw --validation-fraction 0.05
 ```
 
-`train_tokenizer.py` y `prepare_dataset.py` leen archivos `.py` y filas de archivos `.parquet` (columna `--text-column`, por defecto `text`). La muestra toma filas en orden de los shards, de forma determinista para una misma revisión.
+`train_tokenizer.py` and `prepare_dataset.py` read `.py` files and rows from `.parquet` files (`--text-column`, default `text`). The sample takes rows in shard order, deterministically for the same revision.
 
-Ambos scripts aplican el filtro básico de `configs/filters.yaml` (`--filters`) antes de deduplicar y separar, de modo que tokenizer y dataset ven los mismos archivos. Se descartan documentos no UTF-8, demasiado pequeños o grandes, con líneas muy largas, con poca proporción alfanumérica, marcados como autogenerados en sus primeras líneas o que no compilan con `ast.parse` (incluido Python 2). Se elimina un BOM inicial. `manifest.json` registra la configuración del filtro y los rechazos por motivo. Usar el mismo archivo de filtros en ambos scripts. No hay deduplicación aproximada, descontaminación ni filtrado de licencias por archivo.
+Both scripts apply the basic filter in `configs/filters.yaml` (`--filters`) before deduplication and splitting, so the tokenizer and dataset see the same files. They discard non-UTF-8 documents, documents that are too small or large, have very long lines or a low alphanumeric fraction, are marked as autogenerated in their first lines, or fail `ast.parse` (including Python 2). A leading BOM is removed. `manifest.json` records the filter configuration and rejection counts by reason. Use the same filter file in both scripts. There is no approximate deduplication, decontamination, or per-file license filtering.
 
-## Checkpoints y reanudación
+## Checkpoints and Resuming
 
-El último checkpoint se escribe atómicamente en `checkpoints/latest.pt`; incluye pesos, optimizador, scheduler, escalador, estados RNG y posición del flujo de entrenamiento. Ctrl+C solicita detenerse y guardar después de completar el paso actual. Reanudar con los mismos archivos, configuración y backend:
+The latest checkpoint is written atomically to `checkpoints/latest.pt`; it includes weights, optimizer, scheduler, scaler, RNG states, and training stream position. Ctrl+C requests a stop and save after the current step completes. Resume with the same files, configuration, and backend:
 
 ```sh
 uv run python scripts/train.py --config configs/train.yaml --resume checkpoints/latest.pt
 ```
 
-La configuración y el hash del archivo de entrenamiento se comprueban al reanudar. Conservar también el tokenizer y la partición originales; reemplazarlos puede invalidar la evaluación o la generación. Para una reproducción exacta usar el mismo hardware, versión de PyTorch y backend; algunas operaciones de aceleradores pueden ser no deterministas. Los checkpoints contienen objetos Python: cargar únicamente archivos de confianza.
+The configuration and training-file hash are checked when resuming. Keep the original tokenizer and split as well; replacing them may invalidate evaluation or generation. For exact reproducibility, use the same hardware, PyTorch version, and backend; some accelerator operations may be nondeterministic. Checkpoints contain Python objects: load only trusted files.
 
-## Datos y precisión
+## Data and Precision
 
-`prepare_dataset.py` acepta un directorio con archivos `.py`. Deduplica por hash de contenido exacto y separa archivos completos de forma determinista. No detecta duplicados aproximados ni código compartido entre archivos; un corpus real necesita filtrado adicional, análisis de contaminación, revisión de licencias y procedencia antes de entrenar. Si se cambia `--seed` o `--validation-fraction`, usar los mismos valores en `train_tokenizer.py` y `prepare_dataset.py`. El vocabulario BPE puede ser menor que el máximo solicitado si el corpus es pequeño; la generación restringe sus muestras al vocabulario efectivo.
+`prepare_dataset.py` accepts a directory containing `.py` files. It deduplicates by exact content hash and splits whole files deterministically. It does not detect approximate duplicates or code shared between files; a real corpus needs additional filtering, contamination analysis, and license and provenance review before training. If `--seed` or `--validation-fraction` changes, use the same values in `train_tokenizer.py` and `prepare_dataset.py`. The BPE vocabulary can be smaller than the requested maximum for a small corpus; generation restricts sampling to the effective vocabulary.
 
-El flujo concatena documentos delimitados por BOS/EOS y usa ventanas contiguas cíclicas. Atención entre documentos dentro de una ventana está permitida. La pérdida y perplejidad de validación reflejan este flujo y no constituyen benchmarks de corrección funcional de código. La integración de The Stack v2 y benchmarks funcionales quedan para una etapa posterior.
+The stream concatenates documents delimited by BOS/EOS and uses contiguous cyclic windows. Attention across documents within a window is allowed. Validation loss and perplexity reflect this stream and are not benchmarks of functional code correctness. The Stack v2 integration and functional benchmarks are planned for a later stage.
 
-`precision: float32` es la opción predeterminada y compatible con CPU/MPS/CUDA. `float16` y `bfloat16` están habilitados solo en CUDA; se debe verificar el soporte del dispositivo. TensorBoard registra memoria asignada de MPS o CUDA cuando están disponibles. La memoria unificada total del sistema puede diferir de esa medida. No hay limitación térmica automática; ajustar pasos, batch y pausas para un MacBook Air sin ventilador.
+`precision: float32` is the default and works with CPU/MPS/CUDA. `float16` and `bfloat16` are enabled only on CUDA; verify device support. TensorBoard records allocated MPS or CUDA memory when available. Total system unified memory may differ from that measurement. There is no automatic thermal throttling; adjust steps, batch size, and breaks for a fanless MacBook Air.

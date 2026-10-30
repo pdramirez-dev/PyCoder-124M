@@ -71,7 +71,7 @@ def train(model_config, config, data_dir, checkpoint_dir, log_dir, resume=None, 
     def request_stop(signum, frame):
         nonlocal stop
         stop = True
-        print("\nInterrupción solicitada: guardando al terminar el paso actual.")
+        print("\nInterrupt requested: saving after the current step.")
     signal.signal(signal.SIGINT, request_stop)
     print(f"Device: {device}; parameters: {model.num_parameters():,}; start step: {step}")
     try:
