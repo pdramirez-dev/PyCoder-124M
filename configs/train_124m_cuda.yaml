@@ -1,0 +1,15 @@
+# NVIDIA CUDA, 8 GB VRAM. Effective batch: 1 * 64 * 1024 = 65,536 tokens.
+# Keep the same learning-rate schedule and token budget as train_124m.yaml.
+seed: 42
+batch_size: 1
+gradient_accumulation: 64
+learning_rate: 0.0006
+min_learning_rate: 0.00006
+warmup_steps: 75
+max_steps: 1526
+weight_decay: 0.1
+grad_clip: 1.0
+eval_interval: 100
+eval_batches: 20
+checkpoint_interval: 50
+precision: bfloat16

@@ -1,5 +1,8 @@
 # PyCoder-124M
 
+See the [Training Guide](docs/training.md) for hardware profiles, data preparation,
+CUDA/MPS commands, monitoring, checkpoint recovery, and troubleshooting.
+
 An autoregressive Python code model initialized from scratch. The implementation uses a decoder-only Transformer with RoPE, RMSNorm, SwiGLU, and tied embeddings, without pretrained weights. The production configuration has **123,587,328 parameters**: 12 blocks, dimension 768, 12 heads, FFN 2048, vocabulary 50,304, and context 1024. `configs/model_tiny.yaml` is for testing, not measuring final model quality.
 
 ## Requirements and Installation
@@ -36,6 +39,38 @@ For 124M, first prepare a sufficient corpus (see "Real Corpus") and a tokenizer 
 ```sh
 uv run python scripts/train.py --model configs/model_124m.yaml --config configs/train_124m.yaml
 ```
+
+For an 8 GB NVIDIA GPU, `./run.sh --device cuda` selects
+`configs/train_124m_cuda.yaml`: bfloat16, batch size 1, and accumulation 64.
+This preserves 65,536 tokens per optimizer step. `./run.sh --device mps`
+uses the original float32 configuration. An explicit `--config` overrides these defaults.
+Checkpoints require identical model and training configurations when resuming;
+an existing float32 checkpoint cannot resume with the new CUDA configuration.
+Start the CUDA run with a separate checkpoint directory, for example:
+
+```sh
+./run.sh --device cuda --checkpoints checkpoints/cuda --logs logs/cuda
+# Resume a checkpoint created with this configuration:
+./run.sh --device cuda --resume checkpoints/cuda/latest.pt --checkpoints checkpoints/cuda --logs logs/cuda
+```
+
+To inspect hardware and suggest a profile without starting training:
+
+```sh
+uv run python -m pycoder.hardware  # Auto-detect CUDA, MPS, or CPU
+./run.sh --suggest-profile --device cuda
+./run.sh --suggest-profile --device cuda --output configs/train_local.yaml
+./run.sh --device cuda --config configs/train_local.yaml --checkpoints checkpoints/local
+```
+
+The advisor reports system RAM and, on CUDA, total/free VRAM. It selects a conservative
+batch using free VRAM, prefers bfloat16 when supported (otherwise float16 on CUDA),
+and preserves 65,536 tokens per step through gradient accumulation. MPS and CPU use
+float32. Suggestions apply only to the 124M model with context length 1024 and are
+heuristics, not measured memory guarantees. System RAM is separate from CUDA VRAM;
+MPS uses unified memory. RAM figures reflect what the current environment exposes.
+The advisor never starts training or overwrites an existing YAML file. Use the
+original training configuration to resume an existing checkpoint.
 
 Training parameters, batch size, and accumulation are configurable. The demo corpus is insufficient for the production context. Long training runs are not started automatically.
 
