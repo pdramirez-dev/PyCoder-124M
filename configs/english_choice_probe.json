@@ -1,0 +1,14 @@
+[
+  {"id":"opposite","prompt":"The opposite of hot is","options":[" cold."," warm."],"correct":0},
+  {"id":"color","prompt":"On a clear day, the sky usually looks","options":[" green."," blue."],"correct":1},
+  {"id":"category","prompt":"A dog belongs to the category of","options":[" animals."," vegetables."],"correct":0},
+  {"id":"quantity","prompt":"Mia has two apples and gets one more apple. She now has","options":[" four apples."," three apples."],"correct":1},
+  {"id":"containment","prompt":"The key is inside the box. To find the key, look inside the","options":[" box."," shoe."],"correct":0},
+  {"id":"comparison","prompt":"An elephant is usually larger than a","options":[" planet."," mouse."],"correct":1},
+  {"id":"sequence","prompt":"In the sequence one, two, three, the next number is","options":[" four."," zero."],"correct":0},
+  {"id":"negation","prompt":"The cup is not full. This means the cup","options":[" must be full."," is not full."],"correct":1},
+  {"id":"grammar","prompt":"Yesterday, she","options":[" walked home."," walk home."],"correct":0},
+  {"id":"definition","prompt":"A person who teaches students is called a","options":[" window."," teacher."],"correct":1},
+  {"id":"order","prompt":"Sam finished before Lee. The person who finished first was","options":[" Sam."," Lee."],"correct":0},
+  {"id":"purpose","prompt":"To cut a sheet of paper, a useful tool is","options":[" a pillow."," a pair of scissors."],"correct":1}
+]

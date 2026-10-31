@@ -1,0 +1,30 @@
+{
+  "kind": "fresh_sft_pilot_weights_only",
+  "base_sha256": "3ead5d6ffdc30869452dbd3d1f389ca9d5047630019134ff5fa2c2dab2b3c00f",
+  "tokenizer_sha256": "5c297b08007f15d3a0a9d0a95c600c4437f829fa7eaa6471c496decd72dc4358",
+  "train_sha256": "80209b9c64ba5727c332286b3a698c522c2ad82bc015eb9cfea6e0af14889507",
+  "validation_sha256": "d96fad09f0f33833c76a4b4a8741250b4130396a51ea1ccdafad5a3aeb7b700a",
+  "steps": 3,
+  "seed": 42,
+  "learning_rate": 1e-05,
+  "batch_size": 1,
+  "device": "mps",
+  "train_loss": [
+    2.713487148284912,
+    1.2386664152145386,
+    1.3965811729431152
+  ],
+  "validation_before": {
+    "bigcode": 2.1461308717727663,
+    "oasst1-en": 4.97325291633606
+  },
+  "validation_after": {
+    "bigcode": 2.110026514530182,
+    "oasst1-en": 4.9744950294494625
+  },
+  "validation_samples_per_source": 10,
+  "usable_train": 777,
+  "usable_validation": 98,
+  "skipped_long_train": 22,
+  "skipped_long_validation": 2
+}

@@ -1,0 +1,4 @@
+{
+  "weights": {"bigcode": 5, "oasst1-en": 5, "synthetic-en": 90},
+  "max_updates": {"bigcode": 22, "oasst1-en": 24}
+}

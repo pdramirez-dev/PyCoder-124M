@@ -1,0 +1,7 @@
+{
+  "conversations": 785,
+  "assistant_turns": 1129,
+  "legacy_supervised_eos": 785,
+  "v2_supervised_eos": 1129,
+  "v2_prefix_mismatches": 0
+}

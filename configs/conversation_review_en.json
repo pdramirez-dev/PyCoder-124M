@@ -1,0 +1,17 @@
+{
+  "purpose": "Small format-learning experiment, not a quality-approved general chat corpus",
+  "approved": {
+    "1946108e-c4a4-45bf-a105-5a7e0bd67e79": "Relevant clarification questions for a personalized letter; stylistic typo retained.",
+    "051aa8ec-3960-4955-9edf-1fcc66f5bd59": "Requests the missing emails instead of claiming access.",
+    "afb83046-0559-40df-b52d-63fb4f4d9dc1": "Short playful greeting; anthropomorphic wording retained as style, not a factual claim.",
+    "605bfec3-b71a-4657-8350-83a065a93a7a": "Short joke addressing the request.",
+    "b77890cf-2ad4-4231-842f-859c8724debb": "Brief relevant introduction response.",
+    "113402": "Recursive dictionary copy matches the described nested-dictionary behavior.",
+    "560272": "Linear search returns the first matching index or -1.",
+    "51583": "Extracts user_id from dictionaries that contain the specified key.",
+    "119832": "Whitespace normalization matches the supplied example.",
+    "235797": "Sums non-None price values and handles empty input.",
+    "220717": "Concatenates string representations of both arguments."
+  },
+  "limitations": "Agent review, not independent human annotation. Generalization and source-license obligations remain to be assessed."
+}

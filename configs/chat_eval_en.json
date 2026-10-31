@@ -1,0 +1,8 @@
+[
+  {"id": "greeting", "category": "conversation", "prompt": "Hello! Please introduce yourself in one sentence.", "review": "A short, relevant introduction; no role labels or repeated dialogue."},
+  {"id": "clarify", "category": "conversation", "prompt": "My Python script fails, but I have not shown the error. What information do you need?", "review": "Requests useful debugging details instead of inventing an error."},
+  {"id": "explain", "category": "conversation", "prompt": "Explain in one sentence what a Python list is.", "review": "Accurately describes an ordered mutable collection."},
+  {"id": "follow_instruction", "category": "conversation", "prompt": "Reply using exactly one word: Ready", "review": "The entire reply is Ready, aside from whitespace or punctuation."},
+  {"id": "code_double", "category": "code", "prompt": "Write a Python function named double that returns twice its argument.", "review": "Defines double(x) and returns 2*x; verify by execution in isolation."},
+  {"id": "code_empty", "category": "code", "prompt": "Write a Python function named is_empty that returns True for an empty list and False otherwise.", "review": "Defines is_empty(xs) and handles empty and nonempty lists; verify in isolation."}
+]

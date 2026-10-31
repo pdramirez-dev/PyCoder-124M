@@ -1,0 +1,123 @@
+{
+  "checkpoint_sha256": "98f25ca3a6af6757ff935de59a230f97d2e9deb59369bef312cb41d9c8c347de",
+  "chat_format": "turn-eos-v2",
+  "tokenizer_sha256": "5c297b08007f15d3a0a9d0a95c600c4437f829fa7eaa6471c496decd72dc4358",
+  "suite_sha256": "8644f68ea3cdf7794e64fa2b41cb28dfa513e61a62219fbfba5253531f816df3",
+  "torch_version": "2.15.0",
+  "device": "mps",
+  "seed": 42,
+  "top_k": 1,
+  "max_new_tokens": 32,
+  "results": [
+    {
+      "id": "add_new",
+      "category": "addition",
+      "prompt": "Calculate 31 + 14. Reply with only the number.",
+      "expected": "45",
+      "review": "Exact answer 45.",
+      "reply": "20",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "subtract_new",
+      "category": "subtraction",
+      "prompt": "Subtract 17 from 42. Reply with only the number.",
+      "expected": "25",
+      "review": "Exact answer 25.",
+      "reply": "20",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "multiply_new",
+      "category": "multiplication",
+      "prompt": "Calculate 12 times 9. Reply with only the number.",
+      "expected": "108",
+      "review": "Exact answer 108.",
+      "reply": "20",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "length_new",
+      "category": "length",
+      "prompt": "How many letters are in 'butterfly'? Reply with only the number.",
+      "expected": "9",
+      "review": "Exact answer 9.",
+      "reply": "6",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "uppercase_new",
+      "category": "uppercase",
+      "prompt": "Convert 'bamboo' to uppercase. Output only the word.",
+      "expected": "BAMBOO",
+      "review": "Exact answer BAMBOO.",
+      "reply": "e",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "lowercase_new",
+      "category": "lowercase",
+      "prompt": "Convert 'JOURNEY' to lowercase. Output only the word.",
+      "expected": "journey",
+      "review": "Exact answer journey.",
+      "reply": "e",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "reverse_new",
+      "category": "reverse",
+      "prompt": "Write 'cabin' backwards. Output only the word.",
+      "expected": "nibac",
+      "review": "Exact answer nibac.",
+      "reply": "s",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "sort_new",
+      "category": "sort",
+      "prompt": "Put [19, -4, 3] in ascending order. Output only the list.",
+      "expected": "[-4, 3, 19]",
+      "review": "Exact list [-4, 3, 19].",
+      "reply": "[0, 2, 3]",
+      "finish_reason": "eos",
+      "generated_tokens": 8
+    },
+    {
+      "id": "parity_new",
+      "category": "parity",
+      "prompt": "Is 38 even? Answer yes or no.",
+      "expected": "Yes",
+      "review": "Exact answer Yes.",
+      "reply": "20",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "repeat_new",
+      "category": "repeat",
+      "prompt": "Write 'bridge' twice separated by a space. Output only the result.",
+      "expected": "bridge bridge",
+      "review": "Exact answer bridge bridge.",
+      "reply": "s",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "first_new",
+      "category": "first_letter",
+      "prompt": "What is the first letter of 'yellow'? Output only that letter.",
+      "expected": "y",
+      "review": "Exact answer y.",
+      "reply": "e",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    }
+  ]
+}

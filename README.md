@@ -27,6 +27,14 @@ uv run pytest -q
 uv run ruff check src scripts tests
 ```
 
+For a single Python function completion, pass `--single-function` to
+`scripts/generate.py`. It stops before a subsequent top-level `def` or `class`;
+this is a text heuristic and does not guarantee syntactic or functional correctness.
+Custom text stops may be supplied with repeatable `--stop` arguments. The local
+Ollama Modelfile uses the same code-oriented stop sequences and a 100-token limit.
+See [the development roadmap](docs/roadmap-124m-to-1b.md) for planned work on
+instruction tuning, data, evaluation and a possible 1B model.
+
 For configurable training, edit `configs/train.yaml` and run:
 
 ```sh

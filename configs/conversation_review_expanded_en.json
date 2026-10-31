@@ -1,0 +1,24 @@
+{
+  "purpose": "Expanded small reviewed experiment; not a general-purpose training corpus",
+  "approved": {
+    "1946108e-c4a4-45bf-a105-5a7e0bd67e79": "Requests information for a personalized letter; typo retained.",
+    "051aa8ec-3960-4955-9edf-1fcc66f5bd59": "Requests emails rather than claiming access.",
+    "afb83046-0559-40df-b52d-63fb4f4d9dc1": "Relevant playful greeting; anthropomorphic style retained.",
+    "605bfec3-b71a-4657-8350-83a065a93a7a": "Relevant short joke.",
+    "b77890cf-2ad4-4231-842f-859c8724debb": "Relevant introduction.",
+    "113402": "Copies nested dictionaries as requested.",
+    "560272": "Linear search returns a matching index or -1.",
+    "51583": "Extracts existing user IDs.",
+    "119832": "Whitespace normalization matches the example.",
+    "235797": "Sums non-None prices and handles empty input.",
+    "220717": "String conversion and concatenation match the request.",
+    "658806": "Calls each named method with positional arguments and sums results.",
+    "27717": "Filters first-list values absent from the second list.",
+    "3b46e43e-d87e-4ddf-b00f-f465f890e579": "Clarifies the timeframe and presents a tentative projection.",
+    "f3f21e1e-f649-474a-893d-f8032c541a21": "Explains inability to set a reminder and suggests an alternative.",
+    "3de54cf5-ee3f-40ea-aff5-f3935159ff74": "Provides the requested Python and C++ examples.",
+    "3a235e09-0daf-4634-aaf0-11912697dc80": "Provides a requested name for a repricing application.",
+    "453e8918-d803-4b2b-80b2-2e90b2f07a4c": "Answers the greeting and offers help."
+  },
+  "limitations": "Single-agent review, not independent annotation or full functional verification. Source license and provenance obligations remain. Too small for reliable conversational generalization."
+}

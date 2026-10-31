@@ -1,0 +1,23 @@
+{
+  "train_sha256": "9220d089dfe0d7ee030b4b3301b2fd355daf9fb8e9f6dd5fedfcb536053deae8",
+  "sampling": "Python random.Random(42), sample 8 BigCode then 8 OASST rows in file order",
+  "scope": "Manual exploratory review; acceptance is conditional on this inspection and is not a licensing or correctness certification.",
+  "decisions": {
+    "612010": ["exclude", "The regex accepts zero and numeric substrings even though the request specifies valid positive IDs in particular formats."],
+    "220717": ["accept", "String conversion and concatenation address the stated request."],
+    "374450": ["exclude", "Requested one-argument function is implemented with three arguments; cluster definition is also not followed."],
+    "191610": ["review", "Uses NumPy and returns an ndarray; clarify accepted dependencies and output type."],
+    "309973": ["exclude", "str.title capitalizes every word, whereas the request describes first letter uppercase and the rest lowercase."],
+    "284538": ["exclude", "The prompt contains the exact solution copied into the answer; unsuitable for this instruction-learning selection."],
+    "593280": ["review", "Encoding-related requirements are ambiguous and the example is an exception to general acronym behavior."],
+    "394851": ["review", "Matches the given example; broader identifier handling and database validation are unspecified."],
+    "8392c942-f164-449d-b4f8-73cd3faeaba4": ["review", "Specialized finance answer needs domain review; asymmetric returns are described imprecisely."],
+    "3b46e43e-d87e-4ddf-b00f-f465f890e579": ["accept", "Asks for a time horizon and frames the follow-up as a projection."],
+    "f3f21e1e-f649-474a-893d-f8032c541a21": ["accept", "States the limitation and offers an actionable alternative."],
+    "87502efe-075d-4ae1-a444-8d3716936c4b": ["exclude", "The follow-up passes a date format as the timezone argument to Carbon::parse and describes it as a format."],
+    "a1e17406-21f1-4640-b58e-3708d9ce104e": ["exclude", "Claims restored files are necessarily in a separate branch and overstates what reset --hard erases."],
+    "67a6aa95-bbcd-4d76-b2dc-4c42e105ae3e": ["review", "Advice is broadly relevant but requires careful review for tone and appropriateness."],
+    "3de54cf5-ee3f-40ea-aff5-f3935159ff74": ["accept", "Examples address the Python request and C++ follow-up."],
+    "27b99ee4-6ef4-484e-b8f9-a4a8b860bc99": ["review", "Version-specific instructions need verification against the intended Firefox and Windows versions."]
+  }
+}

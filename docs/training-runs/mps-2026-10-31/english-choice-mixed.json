@@ -1,0 +1,314 @@
+{
+  "checkpoint_sha256": "6d06f71ff69c7c6ef4f98badbb0d3637b3c3ccc6eba0cf66d81a8a21805aeeb6",
+  "suite_sha256": "495ade2949ee226e90dce6196c71edada66bf16a93ef0fb36362152e803ece3f",
+  "tokenizer_sha256": "5c297b08007f15d3a0a9d0a95c600c4437f829fa7eaa6471c496decd72dc4358",
+  "torch_version": "2.15.0",
+  "device": "mps",
+  "correct": {
+    "nll_mean": 9,
+    "nll_sum": 8
+  },
+  "total": 12,
+  "results": [
+    {
+      "id": "opposite",
+      "prompt": "The opposite of hot is",
+      "options": [
+        " cold.",
+        " warm."
+      ],
+      "correct": 0,
+      "scores": [
+        {
+          "tokens": 2,
+          "nll_sum": 12.241592407226562,
+          "nll_mean": 6.120796203613281
+        },
+        {
+          "tokens": 2,
+          "nll_sum": 14.984306335449219,
+          "nll_mean": 7.492153167724609
+        }
+      ],
+      "predictions": {
+        "nll_mean": 0,
+        "nll_sum": 0
+      }
+    },
+    {
+      "id": "color",
+      "prompt": "On a clear day, the sky usually looks",
+      "options": [
+        " green.",
+        " blue."
+      ],
+      "correct": 1,
+      "scores": [
+        {
+          "tokens": 2,
+          "nll_sum": 13.612320899963379,
+          "nll_mean": 6.8061604499816895
+        },
+        {
+          "tokens": 2,
+          "nll_sum": 12.508682250976562,
+          "nll_mean": 6.254341125488281
+        }
+      ],
+      "predictions": {
+        "nll_mean": 1,
+        "nll_sum": 1
+      }
+    },
+    {
+      "id": "category",
+      "prompt": "A dog belongs to the category of",
+      "options": [
+        " animals.",
+        " vegetables."
+      ],
+      "correct": 0,
+      "scores": [
+        {
+          "tokens": 2,
+          "nll_sum": 8.006420135498047,
+          "nll_mean": 4.003210067749023
+        },
+        {
+          "tokens": 2,
+          "nll_sum": 12.696123123168945,
+          "nll_mean": 6.348061561584473
+        }
+      ],
+      "predictions": {
+        "nll_mean": 0,
+        "nll_sum": 0
+      }
+    },
+    {
+      "id": "quantity",
+      "prompt": "Mia has two apples and gets one more apple. She now has",
+      "options": [
+        " four apples.",
+        " three apples."
+      ],
+      "correct": 1,
+      "scores": [
+        {
+          "tokens": 3,
+          "nll_sum": 11.716205596923828,
+          "nll_mean": 3.9054019451141357
+        },
+        {
+          "tokens": 3,
+          "nll_sum": 10.812599182128906,
+          "nll_mean": 3.6041996479034424
+        }
+      ],
+      "predictions": {
+        "nll_mean": 1,
+        "nll_sum": 1
+      }
+    },
+    {
+      "id": "containment",
+      "prompt": "The key is inside the box. To find the key, look inside the",
+      "options": [
+        " box.",
+        " shoe."
+      ],
+      "correct": 0,
+      "scores": [
+        {
+          "tokens": 2,
+          "nll_sum": 2.4914779663085938,
+          "nll_mean": 1.2457389831542969
+        },
+        {
+          "tokens": 2,
+          "nll_sum": 15.12745189666748,
+          "nll_mean": 7.56372594833374
+        }
+      ],
+      "predictions": {
+        "nll_mean": 0,
+        "nll_sum": 0
+      }
+    },
+    {
+      "id": "comparison",
+      "prompt": "An elephant is usually larger than a",
+      "options": [
+        " planet.",
+        " mouse."
+      ],
+      "correct": 1,
+      "scores": [
+        {
+          "tokens": 2,
+          "nll_sum": 10.426481246948242,
+          "nll_mean": 5.213240623474121
+        },
+        {
+          "tokens": 2,
+          "nll_sum": 12.257275581359863,
+          "nll_mean": 6.128637790679932
+        }
+      ],
+      "predictions": {
+        "nll_mean": 0,
+        "nll_sum": 0
+      }
+    },
+    {
+      "id": "sequence",
+      "prompt": "In the sequence one, two, three, the next number is",
+      "options": [
+        " four.",
+        " zero."
+      ],
+      "correct": 0,
+      "scores": [
+        {
+          "tokens": 2,
+          "nll_sum": 10.748326301574707,
+          "nll_mean": 5.3741631507873535
+        },
+        {
+          "tokens": 2,
+          "nll_sum": 7.3794379234313965,
+          "nll_mean": 3.6897189617156982
+        }
+      ],
+      "predictions": {
+        "nll_mean": 1,
+        "nll_sum": 1
+      }
+    },
+    {
+      "id": "negation",
+      "prompt": "The cup is not full. This means the cup",
+      "options": [
+        " must be full.",
+        " is not full."
+      ],
+      "correct": 1,
+      "scores": [
+        {
+          "tokens": 4,
+          "nll_sum": 12.956518173217773,
+          "nll_mean": 3.2391295433044434
+        },
+        {
+          "tokens": 4,
+          "nll_sum": 5.206290245056152,
+          "nll_mean": 1.301572561264038
+        }
+      ],
+      "predictions": {
+        "nll_mean": 1,
+        "nll_sum": 1
+      }
+    },
+    {
+      "id": "grammar",
+      "prompt": "Yesterday, she",
+      "options": [
+        " walked home.",
+        " walk home."
+      ],
+      "correct": 0,
+      "scores": [
+        {
+          "tokens": 3,
+          "nll_sum": 22.108877182006836,
+          "nll_mean": 7.369625568389893
+        },
+        {
+          "tokens": 3,
+          "nll_sum": 23.16978645324707,
+          "nll_mean": 7.723262310028076
+        }
+      ],
+      "predictions": {
+        "nll_mean": 0,
+        "nll_sum": 0
+      }
+    },
+    {
+      "id": "definition",
+      "prompt": "A person who teaches students is called a",
+      "options": [
+        " window.",
+        " teacher."
+      ],
+      "correct": 1,
+      "scores": [
+        {
+          "tokens": 2,
+          "nll_sum": 12.475976943969727,
+          "nll_mean": 6.237988471984863
+        },
+        {
+          "tokens": 2,
+          "nll_sum": 9.068821907043457,
+          "nll_mean": 4.5344109535217285
+        }
+      ],
+      "predictions": {
+        "nll_mean": 1,
+        "nll_sum": 1
+      }
+    },
+    {
+      "id": "order",
+      "prompt": "Sam finished before Lee. The person who finished first was",
+      "options": [
+        " Sam.",
+        " Lee."
+      ],
+      "correct": 0,
+      "scores": [
+        {
+          "tokens": 2,
+          "nll_sum": 12.436797142028809,
+          "nll_mean": 6.218398571014404
+        },
+        {
+          "tokens": 2,
+          "nll_sum": 12.38221263885498,
+          "nll_mean": 6.19110631942749
+        }
+      ],
+      "predictions": {
+        "nll_mean": 1,
+        "nll_sum": 1
+      }
+    },
+    {
+      "id": "purpose",
+      "prompt": "To cut a sheet of paper, a useful tool is",
+      "options": [
+        " a pillow.",
+        " a pair of scissors."
+      ],
+      "correct": 1,
+      "scores": [
+        {
+          "tokens": 4,
+          "nll_sum": 18.385982513427734,
+          "nll_mean": 4.596495628356934
+        },
+        {
+          "tokens": 5,
+          "nll_sum": 21.554235458374023,
+          "nll_mean": 4.310847282409668
+        }
+      ],
+      "predictions": {
+        "nll_mean": 1,
+        "nll_sum": 0
+      }
+    }
+  ]
+}

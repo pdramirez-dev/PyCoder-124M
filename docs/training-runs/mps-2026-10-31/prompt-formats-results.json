@@ -1,0 +1,639 @@
+{
+  "cases": {
+    "add": [
+      [
+        [
+          2,
+          3
+        ],
+        5
+      ],
+      [
+        [
+          -2,
+          5
+        ],
+        3
+      ],
+      [
+        [
+          0,
+          0
+        ],
+        0
+      ],
+      [
+        [
+          -4,
+          -6
+        ],
+        -10
+      ]
+    ],
+    "is_even": [
+      [
+        [
+          0
+        ],
+        true
+      ],
+      [
+        [
+          2
+        ],
+        true
+      ],
+      [
+        [
+          3
+        ],
+        false
+      ],
+      [
+        [
+          -2
+        ],
+        true
+      ],
+      [
+        [
+          -3
+        ],
+        false
+      ]
+    ],
+    "factorial": [
+      [
+        [
+          0
+        ],
+        1
+      ],
+      [
+        [
+          1
+        ],
+        1
+      ],
+      [
+        [
+          5
+        ],
+        120
+      ],
+      [
+        [
+          7
+        ],
+        5040
+      ]
+    ],
+    "reverse_string": [
+      [
+        [
+          ""
+        ],
+        ""
+      ],
+      [
+        [
+          "abc"
+        ],
+        "cba"
+      ],
+      [
+        [
+          "a"
+        ],
+        "a"
+      ],
+      [
+        [
+          "hello world"
+        ],
+        "dlrow olleh"
+      ]
+    ],
+    "is_palindrome": [
+      [
+        [
+          ""
+        ],
+        true
+      ],
+      [
+        [
+          "abba"
+        ],
+        true
+      ],
+      [
+        [
+          "abc"
+        ],
+        false
+      ],
+      [
+        [
+          "a"
+        ],
+        true
+      ]
+    ],
+    "fibonacci": [
+      [
+        [
+          0
+        ],
+        0
+      ],
+      [
+        [
+          1
+        ],
+        1
+      ],
+      [
+        [
+          2
+        ],
+        1
+      ],
+      [
+        [
+          6
+        ],
+        8
+      ],
+      [
+        [
+          10
+        ],
+        55
+      ]
+    ]
+  },
+  "results": [
+    {
+      "task": "add",
+      "format": "docstring",
+      "mode": "greedy",
+      "prompt": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n",
+      "output": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b\n\ndef add(",
+      "evaluated_code": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "add",
+      "format": "comment",
+      "mode": "greedy",
+      "prompt": "# Return the sum of a and b.\ndef add(a, b):\n",
+      "output": "# Return the sum of a and b.\ndef add(a, b):\n\treturn a + b\n\n# Return the sum of a and b.\ndef add(a, b):\n\treturn a + b\n\n# Return the sum of a and b.\ndef add(a, b):\n\treturn a + b\n\n# Return the sum of a and b.\ndef add(a, b):\n\treturn a + b\n\n# Return the sum of a and b.\ndef add(a, b):\n",
+      "evaluated_code": "def add(a, b):\n\treturn a + b\n",
+      "status": "evaluated",
+      "passed": 4,
+      "case_results": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "total": 4
+    },
+    {
+      "task": "add",
+      "format": "docstring_body",
+      "mode": "greedy",
+      "prompt": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    ",
+      "output": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n     return a + b\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    return a + b",
+      "evaluated_code": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n     return a + b\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 4
+    },
+    {
+      "task": "add",
+      "format": "docstring_body",
+      "mode": "sample",
+      "prompt": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    ",
+      "output": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n     if a < 0:\n        return a\n    else:\n        return a\n\ndef add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    # if number is divisible by 1\n    if a < 0:\n        return a\n    else:\n        return b\n\ndef make_next(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n    if a > 0:\n        return a\n    else:\n        return b\n\ndef show_the(a",
+      "evaluated_code": "def add(a, b):\n    \"\"\"Return the sum of a and b.\"\"\"\n     if a < 0:\n        return a\n    else:\n        return a\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 4
+    },
+    {
+      "task": "add",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def add(a, b):\n    ",
+      "output": "def add(a, b):\n     return a + b\n\ndef add(a, b):\n    return a + b\n\ndef add(a, b):\n    return a + b\n\ndef add(a, b):\n    return a + b\n\ndef add(a, b):\n    return a + b\n\ndef add(a, b):\n    return a + b\n\ndef add(a, b):\n    return a + b\n\ndef add(a, b):\n    return a",
+      "evaluated_code": "def add(a, b):\n     return a + b\n",
+      "status": "evaluated",
+      "passed": 4,
+      "case_results": [
+        true,
+        true,
+        true,
+        true
+      ],
+      "total": 4
+    },
+    {
+      "task": "is_even",
+      "format": "docstring",
+      "mode": "greedy",
+      "prompt": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n",
+      "output": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n\ndef is_even(n):\n    \"\"\"Return True if n is odd, otherwise False.\"\"\"\n    if n == 0:\n        return True\n    else:\n        return False\n\ndef is_even(n):\n    \"\"\"Return True if n is odd, otherwise False.\"\"\"\n    if n == 0:\n        return True\n    else:\n        return is_even(n-1) + is_even(n-2)\n\ndef is_even(n):\n    \"\"\"Return True",
+      "evaluated_code": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 5
+    },
+    {
+      "task": "is_even",
+      "format": "comment",
+      "mode": "greedy",
+      "prompt": "# Return True if n is even, otherwise False.\ndef is_even(n):\n",
+      "output": "# Return True if n is even, otherwise False.\ndef is_even(n):\n\tif n == 0:\n\t\treturn False\n\telse:\n\t\treturn False\n\n# Return True if n is odd, otherwise False.\ndef is_even(n):\n\tif n == 0:\n\t\treturn False\n\telse:\n\t\treturn True\n\n# Return True if n is odd, otherwise False.\ndef is_even(n):\n\tif n == 0:\n\t\treturn False\n\telse:\n\t\treturn True\n\n",
+      "evaluated_code": "def is_even(n):\n\tif n == 0:\n\t\treturn False\n\telse:\n\t\treturn False\n",
+      "status": "evaluated",
+      "passed": 2,
+      "case_results": [
+        false,
+        false,
+        true,
+        false,
+        true
+      ],
+      "total": 5
+    },
+    {
+      "task": "is_even",
+      "format": "docstring_body",
+      "mode": "greedy",
+      "prompt": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n    ",
+      "output": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n     if n == 1:\n        return True\n    else:\n        return False\n\ndef is_even(n):\n    \"\"\"Return True if n is odd, otherwise False.\"\"\"\n    if n == 2:\n        return True\n    else:\n        return False\n\ndef is_even(n):\n    \"\"\"Return True if n is odd, otherwise False.\"\"\"\n    if n == 2:\n        return True\n    else:\n        return False\n\ndef is_even(n):\n    \"\"\"Return True if",
+      "evaluated_code": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n     if n == 1:\n        return True\n    else:\n        return False\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 5
+    },
+    {
+      "task": "is_even",
+      "format": "docstring_body",
+      "mode": "sample",
+      "prompt": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n    ",
+      "output": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n     if n < 1:\n        return False\n    else:\n        if n % 2 == 0:\n            return True\n        return False\n        \ndef number_of_odd(n):\n    \"\"\"Return a number that is odd, otherwise False.\"\"\"\n     if n % 2 == 0:\n        return False\n    else:\n        return is_even(n - 1) + is_even(n - 2)\n\n",
+      "evaluated_code": "def is_even(n):\n    \"\"\"Return True if n is even, otherwise False.\"\"\"\n     if n < 1:\n        return False\n    else:\n        if n % 2 == 0:\n            return True\n        return False\n        ",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 5
+    },
+    {
+      "task": "is_even",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def is_even(n):\n    ",
+      "output": "def is_even(n):\n     if n == 0:\n         return True\n     return False\n\ndef is_even(n):\n    if n == 0:\n        return True\n    return False\n\ndef is_even(n):\n    if n == 0:\n        return True\n    return False\n\ndef is_even(n):\n    if n == 0:\n        return True\n    return False\n\ndef is_even(n):\n    if n == 0:\n        return True\n    return False\n\ndef is_",
+      "evaluated_code": "def is_even(n):\n     if n == 0:\n         return True\n     return False\n",
+      "status": "evaluated",
+      "passed": 3,
+      "case_results": [
+        true,
+        false,
+        true,
+        false,
+        true
+      ],
+      "total": 5
+    },
+    {
+      "task": "factorial",
+      "format": "docstring",
+      "mode": "greedy",
+      "prompt": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n",
+      "output": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n\ndef factorial(n):\n    \"\"\"Return factorial for a non-negative integer n.\"\"\"\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\ndef factorial(n):\n    \"\"\"Return factorial for a non-negative integer n.\"\"\"\n    if n == 0:\n        return 1\n    else:\n        return n * factorial(n - 1)\n\ndef factorial(n):\n    \"\"\"Return factorial for a non-negative integer n.\"\"\"",
+      "evaluated_code": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "factorial",
+      "format": "comment",
+      "mode": "greedy",
+      "prompt": "# Return n factorial for a non-negative integer n.\ndef factorial(n):\n",
+      "output": "# Return n factorial for a non-negative integer n.\ndef factorial(n):\n\treturn n * factorial(n-1)\n\n# Return the factorial of a number n\ndef factorial(n):\n\treturn n * factorial(n-1)\n\n# Return the factorial of a number n\ndef factorial(n):\n\treturn n * factorial(n-1)\n\n# Return the factorial of a number n\ndef factorial(n):\n\treturn n * factorial(n-1)\n\n# Return the factorial of a number",
+      "evaluated_code": "def factorial(n):\n\treturn n * factorial(n-1)\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "factorial",
+      "format": "docstring_body",
+      "mode": "greedy",
+      "prompt": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n    ",
+      "output": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n    \ndef factorial(n):\n    \"\"\"Return factorial of a number.\"\"\"\n    return n * factorial(n - 1)\n\ndef factorial(n):\n    \"\"\"Return factorial of a number.\"\"\"\n    return n * factorial(n - 1)\n\ndef factorial(n):\n    \"\"\"Return factorial of a number.\"\"\"\n    return n * factorial(n - 1)\n\ndef factorial(n):\n    \"\"\"Return factorial of a number.\"\"\"\n    return n * factorial(n - 1)\n",
+      "evaluated_code": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n    ",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "factorial",
+      "format": "docstring_body",
+      "mode": "sample",
+      "prompt": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n    ",
+      "output": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n     if n == 1:\n        return 1\n    else:\n        return n\n\ntry:\n    if n < 2:\n        print(n * factorial(n - 1))\n    else:\n        print(n * factorial(n - 2))\nexcept ZeroDivisionError:\n    print(\"Weird\")",
+      "evaluated_code": "def factorial(n):\n    \"\"\"Return n factorial for a non-negative integer n.\"\"\"\n     if n == 1:\n        return 1\n    else:\n        return n\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 4
+    },
+    {
+      "task": "factorial",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def factorial(n):\n    ",
+      "output": "def factorial(n):\n     if n == 1:\n         return 1\n     else:\n         return n * factorial(n-1)\n\ndef factorial(n):\n    if n == 1:\n        return 1\n    else:\n        return n * factorial(n-1)\n\ndef factorial(n):\n    if n == 1:\n        return 1\n    else:\n        return n * factorial(n-1)\n\ndef factorial(n):\n    if n == 1:\n        return 1\n    else:\n        return",
+      "evaluated_code": "def factorial(n):\n     if n == 1:\n         return 1\n     else:\n         return n * factorial(n-1)\n",
+      "status": "evaluated",
+      "passed": 3,
+      "case_results": [
+        false,
+        true,
+        true,
+        true
+      ],
+      "total": 4
+    },
+    {
+      "task": "reverse_string",
+      "format": "docstring",
+      "mode": "greedy",
+      "prompt": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n",
+      "output": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n\ndef reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    return s[::-1]\n\ndef reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    return s[::-1]\n\ndef reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    return s[::-1]\n\ndef reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    return s[::-1]\n",
+      "evaluated_code": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "reverse_string",
+      "format": "comment",
+      "mode": "greedy",
+      "prompt": "# Return the string s in reverse order.\ndef reverse_string(s):\n",
+      "output": "# Return the string s in reverse order.\ndef reverse_string(s):\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n",
+      "evaluated_code": "def reverse_string(s):\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n\ts = s.replace(' ', '')\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "reverse_string",
+      "format": "docstring_body",
+      "mode": "greedy",
+      "prompt": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    ",
+      "output": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n     return s[::-1]\n\ndef reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    return s[::-1]\n\ndef reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    return s[::-1]\n\ndef reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    return s[::-1]\n\ndef reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n   ",
+      "evaluated_code": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n     return s[::-1]\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 4
+    },
+    {
+      "task": "reverse_string",
+      "format": "docstring_body",
+      "mode": "sample",
+      "prompt": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n    ",
+      "output": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n     if len(s) == 7 and len(s) == 7: return \"\"\n    return s[-1]\n    \ndef main():\n    s = input()\n    # print(reverse_string(s))\n    s = reverse_string(s)\n    print(s)",
+      "evaluated_code": "def reverse_string(s):\n    \"\"\"Return the string s in reverse order.\"\"\"\n     if len(s) == 7 and len(s) == 7: return \"\"\n    return s[-1]\n    ",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 4
+    },
+    {
+      "task": "reverse_string",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def reverse_string(s):\n    ",
+      "output": "def reverse_string(s):\n     s = s.split()\n     return s[::-1]\n\ndef reverse_string(s):\n    s = s.split()\n    return s[::-1]\n\ndef reverse_string(s):\n    s = s.split()\n    return s[::-1]\n\ndef reverse_string(s):\n    s = s.split()\n    return s[::-1]\n\ndef reverse_string(s):\n    s = s.split()\n    return s[::-1]",
+      "evaluated_code": "def reverse_string(s):\n     s = s.split()\n     return s[::-1]\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "is_palindrome",
+      "format": "docstring",
+      "mode": "greedy",
+      "prompt": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n",
+      "output": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n\ndef is_palindrome(s):\n    \"\"\"Return True if s reads the same backwards and backwards.\"\"\"\n    if s == '':\n        return True\n    else:\n        return False\n\ndef is_palindrome(s):\n    \"\"\"Return True if s reads the same backwards and backwards.\"\"\"\n    if s == '':\n        return True\n    else:\n        return False\n\ndef is_palindrome(s):\n    \"\"\"Return True if s reads the same backwards and backwards.\"\"\"\n    if s == '':\n        return",
+      "evaluated_code": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "is_palindrome",
+      "format": "comment",
+      "mode": "greedy",
+      "prompt": "# Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):\n",
+      "output": "# Return True if s reads the same forwards and backwards.\ndef is_palindrome(s):\n\tif s == '':\n\t\treturn True\n\telse:\n\t\treturn False\n\n# Return True if s reads the same backwards and backwards.\ndef is_palindrome(s):\n\tif s == '':\n\t\treturn True\n\telse:\n\t\treturn False\n\n# Return True if s reads the same backwards and backwards.\ndef is_palindrome(s):\n\tif s == '':\n\t\treturn True\n\telse:\n\t\treturn False\n\n#",
+      "evaluated_code": "def is_palindrome(s):\n\tif s == '':\n\t\treturn True\n\telse:\n\t\treturn False\n",
+      "status": "evaluated",
+      "passed": 2,
+      "case_results": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "is_palindrome",
+      "format": "docstring_body",
+      "mode": "greedy",
+      "prompt": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n    ",
+      "output": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n     if s == '':\n        return True\n    else:\n        return False\n\ndef is_palindrome(s):\n    \"\"\"Return True if s reads the same backwards and backwards.\"\"\"\n    if s == '':\n        return True\n    else:\n        return False\n\ndef is_palindrome(s):\n    \"\"\"Return True if s reads the same backwards and backwards.\"\"\"\n    if s == '':\n        return True\n    else:\n        return False\n\ndef is_palindrome(s):\n    \"\"\"Return True if s",
+      "evaluated_code": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n     if s == '':\n        return True\n    else:\n        return False\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 4
+    },
+    {
+      "task": "is_palindrome",
+      "format": "docstring_body",
+      "mode": "sample",
+      "prompt": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n    ",
+      "output": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n     if s == '':\n        return True\n    if s == '':\n        return False\n    if s == '':\n        return True\n    return False\n\n\ndef is_palindrome(s):\n    \"\"\"Return True if s reads the same backwards.\"\"\"\n    if s == '':\n        return True\n\n    if s == '':\n        return False\n    if s == '':\n        return True\n\n    return is_palindrome(s) and is_palindrome(s)\n",
+      "evaluated_code": "def is_palindrome(s):\n    \"\"\"Return True if s reads the same forwards and backwards.\"\"\"\n     if s == '':\n        return True\n    if s == '':\n        return False\n    if s == '':\n        return True\n    return False\n\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 4
+    },
+    {
+      "task": "is_palindrome",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def is_palindrome(s):\n    ",
+      "output": "def is_palindrome(s):\n     if s == \"\":\n         return True\n     return False\n\ndef is_palindrome(s):\n    if s == \"\":\n        return True\n    return False\n\ndef is_palindrome(s):\n    if s == \"\":\n        return True\n    return False\n\ndef is_palindrome(s):\n    if s == \"\":\n        return True\n    return False\n\ndef is_palindrome(s):\n    if s == \"\":\n        return True\n    return False\n\ndef is_palindrome(s):\n   ",
+      "evaluated_code": "def is_palindrome(s):\n     if s == \"\":\n         return True\n     return False\n",
+      "status": "evaluated",
+      "passed": 2,
+      "case_results": [
+        true,
+        false,
+        true,
+        false
+      ],
+      "total": 4
+    },
+    {
+      "task": "fibonacci",
+      "format": "docstring",
+      "mode": "greedy",
+      "prompt": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n",
+      "output": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n\ndef fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(n) is 0.\"\"\"\n    if n == 0:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\ndef fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(n) is 0.\"\"\"\n    if n == 0:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n",
+      "evaluated_code": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 5
+    },
+    {
+      "task": "fibonacci",
+      "format": "comment",
+      "mode": "greedy",
+      "prompt": "# Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\ndef fibonacci(n):\n",
+      "output": "# Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\ndef fibonacci(n):\n\tif n == 0:\n\t\treturn 1\n\telse:\n\t\treturn fibonacci(n-1) + fibonacci(n-2)\n\n# Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\ndef fibonacci(n):\n\tif n == 0:\n\t\treturn 1\n\telse:\n\t\treturn fibonacci(n-1) + fibonacci(n-2)\n\n# Return the nth Fibonacci number,",
+      "evaluated_code": "def fibonacci(n):\n\tif n == 0:\n\t\treturn 1\n\telse:\n\t\treturn fibonacci(n-1) + fibonacci(n-2)\n",
+      "status": "evaluated",
+      "passed": 0,
+      "case_results": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ],
+      "total": 5
+    },
+    {
+      "task": "fibonacci",
+      "format": "docstring_body",
+      "mode": "greedy",
+      "prompt": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n    ",
+      "output": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n     if n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\n\ndef fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(n) is 0 and fibonacci(n) is 1.\"\"\"\n    if n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\n\ndef fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci",
+      "evaluated_code": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n     if n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 5
+    },
+    {
+      "task": "fibonacci",
+      "format": "docstring_body",
+      "mode": "sample",
+      "prompt": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n    ",
+      "output": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n     if n < 1:\n          return 1\n    else:\n        if n <= 1:\n          return 1\n    return fibonacci(n-1) + fibonacci(n-2)\n\n\nif __name__ == \"__main__\":\n    n = int(input())\n    a, b = input().splitlines()\n    result = fibonacci(a)\n    print(result)\n",
+      "evaluated_code": "def fibonacci(n):\n    \"\"\"Return the nth Fibonacci number, where fibonacci(0) is 0 and fibonacci(1) is 1.\"\"\"\n     if n < 1:\n          return 1\n    else:\n        if n <= 1:\n          return 1\n    return fibonacci(n-1) + fibonacci(n-2)\n\n",
+      "status": "invalid or unsupported",
+      "detail": "IndentationError: unexpected indent",
+      "passed": 0,
+      "total": 5
+    },
+    {
+      "task": "fibonacci",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def fibonacci(n):\n    ",
+      "output": "def fibonacci(n):\n     if n == 1:\n         return 1\n     else:\n         return fibonacci(n-1) + fibonacci(n-2)\n\n\ndef fibonacci(n):\n    if n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\n\ndef fibonacci(n):\n    if n == 1:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n\n\ndef fibonacci(n",
+      "evaluated_code": "def fibonacci(n):\n     if n == 1:\n         return 1\n     else:\n         return fibonacci(n-1) + fibonacci(n-2)\n\n",
+      "status": "evaluated",
+      "passed": 1,
+      "case_results": [
+        false,
+        true,
+        false,
+        false,
+        false
+      ],
+      "total": 5
+    }
+  ]
+}

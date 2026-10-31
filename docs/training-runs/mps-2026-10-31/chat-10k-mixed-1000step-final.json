@@ -1,0 +1,67 @@
+{
+  "checkpoint_sha256": "fe76604341f76ce4a8031b73c8c30b4029cb4fc2f4b21dc2477c7c1efe231e85",
+  "chat_format": "turn-eos-v2",
+  "tokenizer_sha256": "5c297b08007f15d3a0a9d0a95c600c4437f829fa7eaa6471c496decd72dc4358",
+  "suite_sha256": "c1d04a201d6244451b3bdaf4b6c4b449eecfbe599062b562fa6eda815f9d8bc1",
+  "torch_version": "2.15.0",
+  "device": "mps",
+  "seed": 42,
+  "top_k": 1,
+  "max_new_tokens": 80,
+  "results": [
+    {
+      "id": "greeting",
+      "category": "conversation",
+      "prompt": "Hello! Please introduce yourself in one sentence.",
+      "review": "A short, relevant introduction; no role labels or repeated dialogue.",
+      "reply": "No",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "clarify",
+      "category": "conversation",
+      "prompt": "My Python script fails, but I have not shown the error. What information do you need?",
+      "review": "Requests useful debugging details instead of inventing an error.",
+      "reply": "",
+      "finish_reason": "eos",
+      "generated_tokens": 1
+    },
+    {
+      "id": "explain",
+      "category": "conversation",
+      "prompt": "Explain in one sentence what a Python list is.",
+      "review": "Accurately describes an ordered mutable collection.",
+      "reply": "No",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "follow_instruction",
+      "category": "conversation",
+      "prompt": "Reply using exactly one word: Ready",
+      "review": "The entire reply is Ready, aside from whitespace or punctuation.",
+      "reply": "4",
+      "finish_reason": "eos",
+      "generated_tokens": 2
+    },
+    {
+      "id": "code_double",
+      "category": "code",
+      "prompt": "Write a Python function named double that returns twice its argument.",
+      "review": "Defines double(x) and returns 2*x; verify by execution in isolation.",
+      "reply": "def double(a, b):\n    return a + b\n\ndef double(a, b):\n    return a + b\n\ndef double(a, b):\n    return a + b\n\ndef double(a, b):\n    return a + b\n\ndef double(a, b):\n    return a + b\n\ndef double(a, b):\n    return a",
+      "finish_reason": "token_limit",
+      "generated_tokens": 80
+    },
+    {
+      "id": "code_empty",
+      "category": "code",
+      "prompt": "Write a Python function named is_empty that returns True for an empty list and False otherwise.",
+      "review": "Defines is_empty(xs) and handles empty and nonempty lists; verify in isolation.",
+      "reply": "def is_empty(list):\n    return True if list is None else False\n\ndef is_empty(list):\n    return True if list is None else False\n\ndef is_empty(list):\n    return True if list is None else False\n\ndef is_empty(list):\n    return True if list is None else False\n\ndef is_empty(list):",
+      "finish_reason": "token_limit",
+      "generated_tokens": 80
+    }
+  ]
+}

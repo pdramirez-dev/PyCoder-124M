@@ -1,0 +1,71 @@
+{
+  "suite": "pycoder-small-v1",
+  "image": "python:3.12-alpine",
+  "timeout_seconds": 10,
+  "results": [
+    {
+      "task": "add",
+      "format": "signature_body",
+      "mode": "greedy",
+      "total": 4,
+      "status": "evaluated",
+      "case_results": [
+        true,
+        true,
+        true,
+        true
+      ]
+    },
+    {
+      "task": "is_even",
+      "format": "signature_body",
+      "mode": "greedy",
+      "total": 5,
+      "status": "invalid_or_error",
+      "case_results": []
+    },
+    {
+      "task": "factorial",
+      "format": "signature_body",
+      "mode": "greedy",
+      "total": 4,
+      "status": "invalid_or_error",
+      "case_results": []
+    },
+    {
+      "task": "reverse_string",
+      "format": "signature_body",
+      "mode": "greedy",
+      "total": 4,
+      "status": "evaluated",
+      "case_results": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "task": "is_palindrome",
+      "format": "signature_body",
+      "mode": "greedy",
+      "total": 4,
+      "status": "invalid_or_error",
+      "case_results": []
+    },
+    {
+      "task": "fibonacci",
+      "format": "signature_body",
+      "mode": "greedy",
+      "total": 5,
+      "status": "evaluated",
+      "case_results": [
+        false,
+        false,
+        false,
+        false,
+        false
+      ]
+    }
+  ]
+}

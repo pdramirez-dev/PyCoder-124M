@@ -1,0 +1,49 @@
+{
+  "seed": 42,
+  "max_new_tokens": 100,
+  "device": "mps",
+  "results": [
+    {
+      "task": "add",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def add(a, b):\n    ",
+      "output": "def add(a, b):\n     if a == b:\n        return a\n    else:\n        return b\n\ndef sum_numbers(a, b):\n    if a == b:\n        return a\n    else:\n        return a + b\n\ndef sum_numbers(a, b):\n    if a == b:\n        return a\n    else:\n        return a + b\n\ndef sum_numbers(a, b):\n    if a == b:\n        return a\n    else:\n        return a + b\n\n"
+    },
+    {
+      "task": "is_even",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def is_even(n):\n    ",
+      "output": "def is_even(n):\n     if n == 0:\n        return False\n    return True\n\ndef is_even(n):\n    if n == 0:\n        return True\n    else:\n        return is_even(n)\n\ndef is_even(n):\n    if n == 0:\n        return True\n    else:\n        return is_even(n)\n\ndef is_even(n):\n    if n == 0:\n        return True\n    else:\n        return is_even(n)\n\n"
+    },
+    {
+      "task": "factorial",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def factorial(n):\n    ",
+      "output": "def factorial(n):\n     if n == 0:\n        return 1\n    else:\n        return n + factorial(n-1)\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n + factorial(n-1)\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return n + factorial(n-1)\n\ndef factorial(n):\n    if n == 0:\n        return 1\n    else:\n        return"
+    },
+    {
+      "task": "reverse_string",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def reverse_string(s):\n    ",
+      "output": "def reverse_string(s):\n     if not s:\n        return s\n    else:\n        return s[::-1]\n\ndef string_to_string(s):\n    if not s:\n        return s\n    else:\n        return string_to_string(s)\n"
+    },
+    {
+      "task": "is_palindrome",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def is_palindrome(s):\n    ",
+      "output": "def is_palindrome(s):\n     if s == '':\n        return True\n    return False\n\ndef is_palindrome(s):\n    if s == '':\n        return True\n    else:\n        return is_palindrome(s)\n\ndef is_palindrome(s):\n    if s == '':\n        return True\n    else:\n        return is_palindrome(s)\n\ndef is_palindrome(s):\n    if s == '':\n        return True\n    else:\n        return is_palindrome(s)\n\ndef is_palindrome"
+    },
+    {
+      "task": "fibonacci",
+      "format": "signature_body",
+      "mode": "greedy",
+      "prompt": "def fibonacci(n):\n    ",
+      "output": "def fibonacci(n):\n     if n == 0:\n        return 1\n    else:\n        return n + fibonacci(n-1)\n\ndef fibonacci(n):\n    if n == 0:\n        return 1\n    else:\n        return fibonacci(n-1) + fibonacci(n-2)\n"
+    }
+  ]
+}

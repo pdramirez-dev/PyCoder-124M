@@ -1,0 +1,67 @@
+{
+  "checkpoint_sha256": "f02cadea0939527259f476feb26349f8a7ca7178f43dce1f00d59aa1edd38519",
+  "chat_format": "turn-eos-v2",
+  "tokenizer_sha256": "5c297b08007f15d3a0a9d0a95c600c4437f829fa7eaa6471c496decd72dc4358",
+  "suite_sha256": "c1d04a201d6244451b3bdaf4b6c4b449eecfbe599062b562fa6eda815f9d8bc1",
+  "torch_version": "2.15.0",
+  "device": "mps",
+  "seed": 42,
+  "top_k": 1,
+  "max_new_tokens": 80,
+  "results": [
+    {
+      "id": "greeting",
+      "category": "conversation",
+      "prompt": "Hello! Please introduce yourself in one sentence.",
+      "review": "A short, relevant introduction; no role labels or repeated dialogue.",
+      "reply": "You can use the following code:\n\n\nYou can use the following code:\n\n\nYou can use the following code:\n\n\nYou can use the following code:\n\n\nYou can use the following code:\n\n\nYou can use the following code:\n\n\nYou can use the following code:\n\n\nYou can use the following code:",
+      "finish_reason": "token_limit",
+      "generated_tokens": 80
+    },
+    {
+      "id": "clarify",
+      "category": "conversation",
+      "prompt": "My Python script fails, but I have not shown the error. What information do you need?",
+      "review": "Requests useful debugging details instead of inventing an error.",
+      "reply": "This script is a simple script that uses the following:\n\n\ndef main():\n    print(\"Hello World!\")\n\ndef main():\n    print(\"Hello World!\")\n\ndef main():\n    print(\"Hello World!\")\n\ndef main():\n    print(\"Hello World!\")\n\ndef main():\n    print(\"Hello World!\")\n\ndef main():\n    print(\"Hello World!\")",
+      "finish_reason": "token_limit",
+      "generated_tokens": 80
+    },
+    {
+      "id": "explain",
+      "category": "conversation",
+      "prompt": "Explain in one sentence what a Python list is.",
+      "review": "Accurately describes an ordered mutable collection.",
+      "reply": "The following code is to test your program:\n\ndef test_string_to_string(string):\n    \"\"\"\n    This function is to test your program:\n    >>> test_string_to_string(\"Hello World!\")\n    'Hello World!'\n    \"\"\"\n    return string.replace(\"Hello\", \"World!\")",
+      "finish_reason": "eos",
+      "generated_tokens": 67
+    },
+    {
+      "id": "follow_instruction",
+      "category": "conversation",
+      "prompt": "Reply using exactly one word: Ready",
+      "review": "The entire reply is Ready, aside from whitespace or punctuation.",
+      "reply": "The program should print out the words in the file.\n\nThe program should print out the words in the file.\n\nThe program should print out the words in the file.\n\nThe program should print out the words in the file.\n\nThe program should print out the words in the file.\n\nThe program should print out the words in the file.\n\nThe",
+      "finish_reason": "token_limit",
+      "generated_tokens": 80
+    },
+    {
+      "id": "code_double",
+      "category": "code",
+      "prompt": "Write a Python function named double that returns twice its argument.",
+      "review": "Defines double(x) and returns 2*x; verify by execution in isolation.",
+      "reply": "The function should return a string with the following:\n\n\ndef double(string):\n    return string[::-1]\n\ndef double(string):\n    return string[::-1]\n\ndef double(string):\n    return string[::-1]\n\ndef double(string):\n    return string[::-1]\n\ndef double(string):\n    return string[::-1]\n\ndef",
+      "finish_reason": "token_limit",
+      "generated_tokens": 80
+    },
+    {
+      "id": "code_empty",
+      "category": "code",
+      "prompt": "Write a Python function named is_empty that returns True for an empty list and False otherwise.",
+      "review": "Defines is_empty(xs) and handles empty and nonempty lists; verify in isolation.",
+      "reply": "The function should return True if the list is empty.\n\nExample:\n\ndef is_empty(list):\n    return True if list is empty.\n\nExample:\n\ndef is_empty(list):\n    return True if list is empty.\n\nExample:\n\n\ndef is_empty(list):\n    return True if list is empty.\n\nExample:",
+      "finish_reason": "token_limit",
+      "generated_tokens": 80
+    }
+  ]
+}
